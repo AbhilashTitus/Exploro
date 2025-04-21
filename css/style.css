@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --primary-color: #1BA1DE;
+    --white-color: #ffffff;
+    --light-gray-color: #ddd;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+/*========================Utility Classes Start========================*/
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heading-normal-txt {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    color: var(--primary-color);
+}
+
+.headings {
+    font-size: 3rem;
+    font-family: "ubuntu";
+    padding-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.headings span {
+    color: var(--primary-color);
+}
+
+.secondary-headings {
+    font-size: 2.5rem;
+    font-family: "ubuntu";
+    padding: 1rem 0;
+}
+
+.lead {
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+}
+
+.primary-btn {
+    width: 50%;
+    outline: none;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.7rem;
+    font-size: 1.7rem;
+    border-radius: 4px;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+/*========================Utility Classes Stop=========================*/
+
+/* Header Start */
+header {
+    padding: 0;
+    background: var(--primary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 0.9rem;
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--white-color);
+    font-size: 1.1rem;
+}
+
+nav ul li::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--white-color);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+
+/* Header Close */
+
+/* Showcase Start */
+main {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.swiper {
+    height: 100vh;
+}
+
+.swiper-wrapper {
+    width: 100%;
+}
+
+.overlay {
+    position: relative;
+}
+
+.overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.img-overlay {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 100%;
+    font-family: "ubuntu";
+    transform: translate(-50%, -50%);
+}
+
+.img-overlay p {
+    font-size: 1rem;
+    letter-spacing: 8px;
+    color: var(--white-color);
+    animation: animate 4s forwards;
+    transition: all 0.3s ease-in-out;
+}
+
+.img-overlay h2 {
+    font-size: 5rem;
+    color: var(--white-color);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    animation: animate 4s forwards;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    75% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-0%);
+    }
+}
+
+/* Showcase End */
+
+/* About Section */
+#about-us {
+    padding: 5rem 0;
+    background: var(--light-gray-color);
+    text-align: center;
+}
+
+#about-us h2 {
+    font-size: 2.5rem;
+    font-family: "ubuntu";
+    margin-bottom: 1rem;
+}
+
+#about-us p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Tours Section */
+#tours {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.tour-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.tour-cards .card {
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tour-cards .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tour-cards .card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.tour-cards .card p {
+    color: #777;
+    font-size: 1rem;
+    padding: 0 1rem 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: var(--white-color);
+    padding: 4rem 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin: 0.5rem 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+/* Mobile and Tablet Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        position: fixed;
+        top: 100px;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background: var(--primary-color);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        transform: translateX(100%);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav ul li {
+        padding: 1rem 2rem;
+        width: 100%;
+        text-align: left;
+    }
+
+    nav ul.active {
+        transform: translateX(0);
+    }
+}
