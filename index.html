@@ -16,17 +16,23 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="img/logo.jpg" alt="">
+                <img src="img/logo.jpg" alt="Logo">
             </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Tours</a></li>
-                <li><a href="#">Destination</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <div id="hamburger" class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div id="navLinks" class="nav-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about-us">About</a></li>
+                    <li><a href="#tours">Tours</a></li>
+                    <li><a href="#destination">Destination</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </nav>
+
     </header>
     <!-- Header Stop -->
 
@@ -81,6 +87,7 @@
                         <option value="day 2">Duration 2</option>
                         <option value="day 3">Duration 3</option>
                     </select>
+                    <button type="submit" class="primary-btn">Search</button>
                 </form>
             </div>
         </div>
@@ -92,7 +99,8 @@
         <div class="container">
             <div class="heading-normal-txt">About Us</div>
             <h2>Explore the World with Us</h2>
-            <p>We offer personalized and guided tours for travelers around the globe, ensuring the best experiences. Join us on our adventure and explore the world.</p>
+            <p>We offer personalized and guided tours for travelers around the globe, ensuring the best experiences.
+                Join us on our adventure and explore the world.</p>
         </div>
     </section>
     <!-- About Us Section Stop -->
@@ -155,11 +163,21 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("nav-links");
+        const navLinks = document.getElementById("navLinks"); 
+
         hamburger.addEventListener("click", () => {
             navLinks.classList.toggle("active");
         });
+
+        // Close menu when a nav link is clicked
+        document.querySelectorAll("#navLinks a").forEach(link => { 
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+        });
     </script>
+
+
     <script>
         var swiper = new Swiper(".swiper", {
             loop: true,
@@ -171,8 +189,6 @@
             speed: 800,
         });
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/script.js"></script>
 </body>
